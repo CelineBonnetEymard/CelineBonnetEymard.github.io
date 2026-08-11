@@ -716,6 +716,14 @@ body{
   border-left:2px solid #e3e9e6;
 }
 
+.engagement-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:8px;
+  width:100%;
+}
+
 .engagement strong{
   font-size:9.6pt;
   font-weight:650;
@@ -1189,6 +1197,11 @@ body{
 .cv-lower-grid > .engagements{ grid-area:engagements; }
 .cv-lower-grid > .langues{ grid-area:langues; }
 
+.cv-lower-grid > .competences,
+.cv-lower-grid > .langues{
+  margin-left: 20px;
+}
+
 .cv-lower-grid > .section{
   margin-bottom:0;
 }
@@ -1202,6 +1215,11 @@ body{
       "engagements"
       "langues";
     row-gap:16px;
+  }
+
+  .cv-lower-grid > .competences,
+  .cv-lower-grid > .langues{
+    margin-left: 0;
   }
 }
 
@@ -1679,28 +1697,52 @@ I led projects combining continuous improvement, methods, ERP systems and digita
       </h2>
 
       <div class="engagement">
-        <strong>Scouts Unitaires de France · 2021–2024</strong>
-        <span class="desc fr">Cheftaine puis responsable d’unité · encadrement de groupes jusqu’à 32 jeunes. Préparation et organisation de camps · formations CEP1 & CEP2.</span>
-        <span class="desc en">Scout leader then unit leader · supervised up to 32 young people. Planned and organised camps · CEP1 & CEP2 training.</span>
+        <div class="engagement-head">
+          <strong>
+            <span class="fr">Scouts Unitaires de France</span>
+            <span class="en">French Catholic Scouts (SUF)</span>
+          </strong>
+          <span class="date">2021–2024</span>
+        </div>
+        <span class="desc fr">
+          Cheftaine puis responsable d’unité · encadrement de groupes jusqu’à 32 jeunes.
+          Préparation et organisation de camps · formations CEP1 & CEP2.
+        </span>
+        <span class="desc en">
+          Scout leader then unit leader · supervised up to 32 young people.
+          Planned and organised camps · CEP1 & CEP2 training.
+        </span>
       </div>
 
       <div class="engagement">
-        <strong>Club : Poly’tek Sound System · 2024–2025</strong>
+        <div class="engagement-head">
+          <strong>Club : Poly’tek Sound System</strong>
+          <span class="date">2024–2025</span>
+        </div>
         <span class="desc fr">Présidente · coordination d’équipe et organisation d’événements.</span>
         <span class="desc en">President · team coordination and event organisation.</span>
       </div>
 
       <div class="engagement">
-        <strong>BDE Polytech Angers · 2025</strong>
+        <div class="engagement-head">
+          <strong>
+            <span class="fr">BDE Polytech Angers</span>
+            <span class="en">Polytech Angers Student Union</span>
+          </strong>
+          <span class="date">2025</span>
+        </div>
         <span class="desc fr">Responsable logistique.</span>
         <span class="desc en">Logistics lead.</span>
       </div>
 
       <div class="engagement">
-        <strong>
-          <span class="fr">Volontariat au Bénin · 2022</span>
-          <span class="en">Volunteering in Benin · 2022</span>
-        </strong>
+        <div class="engagement-head">
+          <strong>
+            <span class="fr">Volontariat au Bénin</span>
+            <span class="en">Volunteering in Benin</span>
+          </strong>
+          <span class="date">2022</span>
+        </div>
         <span class="desc fr">Missions d’un mois auprès des Petites Sœurs des Pauvres : accompagnement de personnes âgées en situation de grande précarité et soutien aux activités quotidiennes.</span>
         <span class="desc en">One-month mission with les Petites Soeurs des Pauvres : supporting elderly people in situations of severe hardship and assisting with daily activities.</span>
       </div>
