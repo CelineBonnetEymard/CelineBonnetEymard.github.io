@@ -1,0 +1,1750 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV – Céline Bonnet-Eymard</title>
+
+<style>
+:root{
+  --green:#173f35;
+  --green-dark:#12352d;
+  --green-soft:#eef3f1;
+  --ink:#151918;
+  --muted:#59625f;
+  --line:#d7dfdc;
+  --paper:#ffffff;
+  --bg:#edf1ef;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html,body{
+  margin:0;
+  padding:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:"Aptos Narrow", sans-serif;
+  -webkit-print-color-adjust:exact;
+  print-color-adjust:exact;
+}
+
+body{
+  padding:18px;
+  font-size:10.5pt;
+  line-height:1.28;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+a:hover{
+  color:var(--green);
+}
+
+/* ---------- controls ---------- */
+
+.toolbar{
+  width:210mm;
+  margin:0 auto 8px;
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+  gap:6px;
+}
+
+.toolbar button{
+  border:1px solid #c8d2ce;
+  background:#fff;
+  color:var(--green);
+  padding:6px 10px;
+  border-radius:6px;
+  font-family:"Aptos Narrow", sans-serif;
+  font-size:10pt;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.toolbar button:hover,
+.toolbar button.active{
+  background:var(--green);
+  border-color:var(--green);
+  color:#fff;
+}
+
+.toolbar small{
+  color:#69736f;
+  font-size:8.5pt;
+}
+
+/* ---------- page ---------- */
+
+.cv{
+  width:210mm;
+  height:297mm;
+  margin:0 auto;
+  background:var(--paper);
+  padding:10mm 11mm 9mm;
+  box-shadow:0 10px 32px rgba(20,35,30,.10);
+  overflow:hidden;
+}
+
+/* ---------- language ---------- */
+
+body.lang-fr .en{
+  display:none !important;
+}
+
+body.lang-en .fr{
+  display:none !important;
+}
+
+/* ---------- header ---------- */
+
+.header{
+  display:grid;
+  grid-template-columns:1fr 21mm;
+  gap:10px;
+  align-items:start;
+  padding-bottom:6px;
+  border-bottom:1px solid var(--line);
+}
+
+.target-role{
+  margin:0;
+  color:var(--green);
+  font-family:"Aptos Narrow", sans-serif;
+  font-size:17.5pt;
+  font-weight:800;
+  line-height:.98;
+  letter-spacing:.015em;
+  text-transform:uppercase;
+}
+
+.name{
+  margin-top:3px;
+  font-family:"Aptos Narrow", sans-serif;
+  font-size:14pt;
+  line-height:1;
+  font-weight:700;
+  color:var(--ink);
+}
+
+.contact-row{
+  margin-top:6px;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:4px 11px;
+  color:var(--muted);
+  font-size:9.1pt;
+}
+
+.contact-item{
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+  white-space:nowrap;
+}
+
+.icon{
+  width:12px;
+  height:12px;
+  stroke:var(--green);
+  fill:none;
+  stroke-width:1.8;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  flex:none;
+}
+
+.photo{
+  width:21mm;
+  height:24mm;
+  border:1px solid var(--line);
+  border-radius:4px;
+  overflow:hidden;
+  background:#f7f9f8;
+}
+
+.photo img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  object-position:center 18%;
+}
+
+.photo-placeholder{
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:4px;
+  color:#7b8581;
+  font-size:7.8pt;
+  line-height:1.1;
+}
+
+/* ---------- profile ---------- */
+
+.profile{
+  margin:7px 0 8px;
+  font-size:10.1pt;
+  line-height:1.31;
+  color:#35413e;
+}
+
+/* ---------- sections ---------- */
+
+.section{
+  margin-bottom:7px;
+  break-inside:avoid;
+}
+
+.section-title{
+  margin:0 0 6px;
+  display:flex;
+  align-items:center;
+  gap:7px;
+  color:var(--green);
+  font-family:"Aptos Narrow", sans-serif;
+  font-size:10.5pt;
+  font-weight:800;
+  line-height:1;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+}
+
+.section-title::after{
+  content:"";
+  flex:1;
+  height:1px;
+  background:var(--line);
+}
+
+/* ---------- experience ---------- */
+
+.experience-grid{
+  display:grid;
+  grid-template-columns:1.62fr .9fr;
+  gap:12px;
+}
+
+.job{
+  min-width:0;
+}
+
+.job-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:8px;
+  margin-bottom:2px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  min-width:0;
+}
+
+.logo{
+  width:18px;
+  height:18px;
+  flex:none;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  border:1px solid var(--line);
+  border-radius:4px;
+  background:#fff;
+}
+
+.logo img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+
+.logo-fallback{
+  color:var(--green);
+  font-size:7pt;
+  font-weight:800;
+}
+
+.company,
+.school{
+  font-family:"Aptos Narrow", sans-serif;
+  font-size:11.4pt;
+  font-weight:800;
+  line-height:1.05;
+}
+
+.company a::after,
+.school a::after{
+  content:" ↗";
+  color:var(--green);
+  font-size:.78em;
+}
+
+.date{
+  color:var(--muted);
+  font-size:8.6pt;
+  white-space:nowrap;
+}
+
+.job-title{
+  margin:1px 0 4px 24px;
+  color:#44504d;
+  font-size:9.6pt;
+  font-weight:700;
+  line-height:1.15;
+}
+
+ul{
+  margin:0;
+  padding-left:16px;
+}
+
+li{
+  margin:0 0 2.2px;
+  font-size:9.75pt;
+  line-height:1.23;
+}
+
+li::marker{
+  color:var(--green);
+}
+
+.metric{
+  color:var(--green-dark);
+  font-weight:800;
+}
+
+.other-experience{
+  margin-top:5px;
+  padding-top:5px;
+  border-top:1px solid var(--line);
+  color:#4e5a56;
+  font-size:9.1pt;
+  line-height:1.22;
+}
+
+/* ---------- lower area ---------- */
+
+.lower-grid{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:13px;
+  margin-top:8px;
+}
+
+.subgrid{
+  display:grid;
+  grid-template-columns:1fr .56fr;
+  gap:10px;
+}
+
+.edu{
+  margin-bottom:6px;
+}
+
+.edu-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:8px;
+}
+
+.degree{
+  margin:2px 0 0 24px;
+  font-size:9.8pt;
+  line-height:1.22;
+}
+
+.project{
+  margin:3px 0 0 24px;
+  padding-left:7px;
+  border-left:2px solid var(--green-soft);
+  color:#4a5753;
+  font-size:9.1pt;
+  line-height:1.2;
+}
+
+/* ---------- skills ---------- */
+
+.skill-group{
+  margin-bottom:6px;
+}
+
+.skill-label{
+  display:block;
+  margin-bottom:3px;
+  font-size:9.5pt;
+  font-weight:800;
+}
+
+.tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:4px;
+}
+
+.tag{
+  display:inline-flex;
+  align-items:center;
+  padding:2px 6px;
+  min-height:19px;
+  border:1px solid #d1dad6;
+  border-radius:999px;
+  background:#fff;
+  color:#3f4c48;
+  font-size:8.9pt;
+  line-height:1;
+}
+
+/* ---------- languages ---------- */
+
+.language{
+  margin-bottom:7px;
+  font-size:9.4pt;
+  line-height:1.18;
+}
+
+.language strong{
+  display:block;
+  font-size:9.6pt;
+}
+
+.language span{
+  color:#4f5b57;
+}
+
+/* ---------- engagements ---------- */
+
+.engagement{
+  margin-bottom:6px;
+}
+
+.engagement strong{
+  display:block;
+  font-size:9.7pt;
+  line-height:1.17;
+}
+
+.engagement .desc{
+  display:block;
+  margin-top:2px;
+  color:#505c58;
+  font-size:9.1pt;
+  line-height:1.2;
+}
+
+.note{
+  margin-top:5px;
+  padding:6px 7px;
+  border-radius:5px;
+  background:var(--green-soft);
+  color:#34423e;
+  font-size:9pt;
+  line-height:1.2;
+}
+
+/* ---------- print ---------- */
+
+
+/* ---------- v6 cleaner desktop layout ---------- */
+
+.experience-stack{
+  display:block;
+}
+
+.experience-stack .job{
+  margin-bottom:10px;
+}
+
+.experience-stack .job + .job{
+  padding-top:2px;
+}
+
+.clean-lower{
+  grid-template-columns:1.12fr .88fr;
+  gap:16px;
+  margin-top:9px;
+}
+
+.lower-left,
+.lower-right{
+  min-width:0;
+}
+
+.lower-right .section{
+  margin-bottom:10px;
+}
+
+.target-role{
+  font-size:17.5pt;
+  line-height:1.02;
+  letter-spacing:.01em;
+}
+
+.profile{
+  margin:7px 0 10px;
+  font-size:10.1pt;
+  line-height:1.34;
+}
+
+.section{
+  margin-bottom:9px;
+}
+
+.section-title{
+  margin-bottom:7px;
+}
+
+.job-title{
+  margin-bottom:5px;
+}
+
+li{
+  margin-bottom:2.8px;
+}
+
+.company,
+.school{
+  font-size:11.2pt;
+}
+
+.other-experience{
+  margin-top:6px;
+}
+
+.skill-group{
+  margin-bottom:8px;
+}
+
+.language{
+  margin-bottom:8px;
+}
+
+.engagement{
+  margin-bottom:7px;
+}
+
+@media screen and (max-width:900px){
+  .experience-stack{
+    display:block;
+  }
+
+  .clean-lower{
+    grid-template-columns:1fr;
+    gap:0;
+  }
+
+  .target-role{
+    font-size:16.5pt;
+  }
+
+  .experience-stack .job{
+    margin-bottom:16px;
+  }
+}
+
+@media screen and (max-width:520px){
+  .target-role{
+    font-size:15.5pt;
+  }
+}
+
+
+/* ---------- v7 refined hierarchy ---------- */
+
+body{
+  font-weight:400;
+}
+
+.target-role{
+  font-size:16.5pt;
+  font-weight:700;
+  letter-spacing:.008em;
+}
+
+.name{
+  font-size:13.3pt;
+  font-weight:600;
+}
+
+.profile{
+  font-size:10.2pt;
+  line-height:1.38;
+  color:#3d4744;
+  margin:8px 0 12px;
+}
+
+.section{
+  margin-bottom:25px;
+}
+
+.section-title{
+  font-size:10.6pt;
+  font-weight:700;
+  letter-spacing:.08em;
+  margin-bottom:8px;
+}
+
+.company,
+.school{
+  font-size:11pt;
+  font-weight:650;
+}
+
+.job{
+  margin-bottom:12px;
+}
+
+.job-head{
+  margin-bottom:3px;
+}
+
+.job-role{
+  margin:2px 0 6px 25px;
+  font-size:9.7pt;
+  line-height:1.22;
+  font-weight:500;
+  color:#4d5754;
+}
+
+.job ul{
+  margin-left:4px;
+  padding-left:22px;
+  border-left:1px solid #e4e9e7;
+}
+
+.job li{
+  position:relative;
+  margin-bottom:4px;
+  padding-left:2px;
+  font-size:9.75pt;
+  line-height:1.3;
+}
+
+.job li::marker{
+  color:var(--green);
+  font-size:.85em;
+}
+
+.job strong,
+.degree strong,
+.note strong{
+  font-weight:650;
+}
+
+.metric{
+  color:inherit;
+  font-weight:650;
+}
+
+.other-experience{
+  margin-top:8px;
+  padding-top:7px;
+  font-size:9pt;
+  color:#59645f;
+}
+
+.edu{
+  margin-bottom:9px;
+}
+
+.degree{
+  margin-top:3px;
+  font-size:9.6pt;
+  line-height:1.28;
+  font-weight:400;
+}
+
+.project{
+  margin-top:4px;
+  padding:4px 0 4px 8px;
+  border-left:2px solid #cfdad5;
+  font-size:9pt;
+  line-height:1.28;
+  background:linear-gradient(90deg, rgba(238,243,241,.7), rgba(255,255,255,0));
+}
+
+.refined-lower{
+  grid-template-columns:1.08fr .92fr;
+  gap:18px;
+}
+
+.skill-label{
+  font-size:9.3pt;
+  font-weight:650;
+  margin-bottom:4px;
+}
+
+.skill-group{
+  margin-bottom:9px;
+}
+
+.tags{
+  gap:5px;
+}
+
+.tag{
+  border-radius:6px;
+  min-height:21px;
+  padding:3px 7px;
+  font-size:8.8pt;
+  background:#fafcfb;
+}
+
+.language strong{
+  font-weight:650;
+}
+
+.engagement{
+  margin-bottom:9px;
+  padding-left:9px;
+  border-left:2px solid #e3e9e6;
+}
+
+.engagement strong{
+  font-size:9.6pt;
+  font-weight:650;
+}
+
+.engagement .desc{
+  margin-top:3px;
+  font-size:9pt;
+  line-height:1.3;
+  color:#56615d;
+}
+
+.available{
+  font-weight:600;
+}
+
+.contact-row{
+  font-weight:400;
+}
+
+@media screen and (max-width:900px){
+  .target-role{
+    font-size:16pt;
+  }
+
+  .job ul{
+    margin-left:0;
+    padding-left:20px;
+  }
+
+  .job li{
+    font-size:10.4pt;
+    line-height:1.4;
+    margin-bottom:6px;
+  }
+
+  .engagement{
+    padding-left:10px;
+  }
+}
+
+@media screen and (max-width:520px){
+  .target-role{
+    font-size:15pt;
+  }
+
+  .section-title{
+    font-size:11pt;
+  }
+}
+
+@page{
+  size:A4 portrait;
+  margin:0;
+}
+
+@media print{
+  html,body{
+    width:210mm;
+    height:297mm;
+    background:#fff;
+  }
+
+  body{
+    padding:0;
+  }
+
+  .toolbar{
+    display:none !important;
+  }
+
+  .cv{
+    width:210mm;
+    height:297mm;
+    margin:0;
+    box-shadow:none;
+    overflow:hidden;
+  }
+}
+
+@media screen and (max-width:900px){
+  html,body{
+    width:100%;
+    min-height:100%;
+    background:#fff;
+  }
+
+  body{
+    padding:0;
+    font-size:11pt;
+    line-height:1.35;
+    overflow-x:hidden;
+  }
+
+  .toolbar{
+    position:sticky;
+    top:0;
+    z-index:20;
+    width:100%;
+    margin:0;
+    padding:8px 10px;
+    justify-content:flex-start;
+    background:rgba(255,255,255,.96);
+    border-bottom:1px solid var(--line);
+    backdrop-filter:blur(8px);
+  }
+
+  .toolbar button{
+    font-size:10.5pt;
+    padding:7px 10px;
+  }
+
+  .toolbar small{
+    display:none;
+  }
+
+  .cv{
+    width:100%;
+    height:auto;
+    min-height:100vh;
+    margin:0;
+    padding:16px 16px 24px;
+    box-shadow:none;
+    overflow:visible;
+  }
+
+  .header{
+    grid-template-columns:minmax(0,1fr) 18mm;
+    gap:10px;
+    padding-bottom:9px;
+  }
+
+  .target-role{
+    font-size:20pt;
+    line-height:1.02;
+    letter-spacing:.01em;
+  }
+
+  .name{
+    margin-top:5px;
+    font-size:14pt;
+  }
+
+  .contact-row{
+    margin-top:8px;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:5px;
+    font-size:10.1pt;
+  }
+
+  .contact-item{
+    white-space:normal;
+    align-items:flex-start;
+  }
+
+  .icon{
+    width:14px;
+    height:14px;
+    margin-top:1px;
+  }
+
+  .availability{
+    margin-top:7px;
+    font-size:9.7pt;
+    padding:3px 8px;
+  }
+
+  .photo{
+    width:18mm;
+    height:21mm;
+    border-radius:4px;
+  }
+
+  .profile{
+    margin:10px 0 12px;
+    font-size:10.5pt;
+    line-height:1.4;
+  }
+
+  .section{
+    margin-bottom:14px;
+  }
+
+  .section-title{
+    margin-bottom:8px;
+    font-size:11.5pt;
+    letter-spacing:.08em;
+  }
+
+  .experience-grid,
+  .lower-grid,
+  .subgrid{
+    grid-template-columns:1fr;
+    gap:0;
+  }
+
+  .job{
+    margin-bottom:14px;
+  }
+
+  .job-head{
+    align-items:flex-start;
+    gap:8px;
+  }
+
+  .brand{
+    align-items:flex-start;
+  }
+
+  .logo{
+    width:20px;
+    height:20px;
+    margin-top:1px;
+  }
+
+  .company,
+  .school{
+    font-size:12pt;
+    line-height:1.12;
+    white-space:normal;
+    overflow:visible;
+    text-overflow:clip;
+  }
+
+  .date{
+    font-size:9.3pt;
+    line-height:1.15;
+    text-align:right;
+    flex:none;
+  }
+
+  .job-title{
+    margin:3px 0 6px 26px;
+    font-size:10.3pt;
+    line-height:1.25;
+  }
+
+  ul{
+    padding-left:18px;
+  }
+
+  li{
+    margin-bottom:4px;
+    font-size:10.5pt;
+    line-height:1.35;
+  }
+
+  .other-experience{
+    margin-top:8px;
+    padding-top:7px;
+    font-size:9.8pt;
+    line-height:1.3;
+  }
+
+  .lower-grid{
+    margin-top:12px;
+  }
+
+  .edu{
+    margin-bottom:10px;
+  }
+
+  .edu-head{
+    align-items:flex-start;
+  }
+
+  .degree{
+    margin:4px 0 0 26px;
+    font-size:10.4pt;
+    line-height:1.3;
+  }
+
+  .project{
+    margin:5px 0 0 26px;
+    font-size:9.8pt;
+    line-height:1.3;
+  }
+
+  .skill-group{
+    margin-bottom:10px;
+  }
+
+  .skill-label{
+    margin-bottom:5px;
+    font-size:10.5pt;
+  }
+
+  .tags{
+    gap:6px;
+  }
+
+  .tag{
+    min-height:24px;
+    padding:4px 8px;
+    font-size:9.7pt;
+    line-height:1.1;
+  }
+
+  .language{
+    margin-bottom:9px;
+    font-size:10.4pt;
+  }
+
+  .language strong{
+    font-size:10.6pt;
+  }
+
+  .engagement{
+    margin-bottom:10px;
+  }
+
+  .engagement strong{
+    font-size:10.5pt;
+    line-height:1.25;
+  }
+
+  .engagement .desc{
+    margin-top:3px;
+    font-size:9.9pt;
+    line-height:1.35;
+  }
+
+  .note{
+    margin-top:10px;
+    padding:8px 9px;
+    font-size:9.9pt;
+    line-height:1.35;
+  }
+}
+
+@media screen and (max-width:520px){
+  .cv{
+    padding:14px 13px 22px;
+  }
+
+  .header{
+    grid-template-columns:minmax(0,1fr) 16mm;
+    gap:8px;
+  }
+
+  .target-role{
+    font-size:17.5pt;
+  }
+
+  .name{
+    font-size:13.5pt;
+  }
+
+  .photo{
+    width:16mm;
+    height:19mm;
+  }
+
+  .job-head,
+  .edu-head{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:2px;
+  }
+
+  .date{
+    margin-left:26px;
+    text-align:left;
+  }
+
+  .toolbar{
+    gap:5px;
+    overflow-x:auto;
+  }
+
+  .toolbar button{
+    flex:none;
+  }
+}
+
+/* ---------- v9: print uses desktop layout, never mobile layout ---------- */
+@media print{
+  html,
+  body{
+    width:210mm !important;
+    height:297mm !important;
+    min-width:210mm !important;
+    max-width:210mm !important;
+    margin:0 !important;
+    padding:0 !important;
+    background:#fff !important;
+  }
+
+  .toolbar{
+    display:none !important;
+  }
+
+  .cv{
+    width:210mm !important;
+    height:297mm !important;
+    min-height:297mm !important;
+    margin:0 !important;
+    padding:10mm 11mm 9mm !important;
+    box-shadow:none !important;
+    overflow:hidden !important;
+  }
+
+  /* Explicitly restore the desktop grids during printing */
+  .experience-grid{
+    display:grid !important;
+    grid-template-columns:1.62fr .9fr !important;
+    gap:12px !important;
+  }
+
+  .lower-grid{
+    display:grid !important;
+    grid-template-columns:1.08fr .92fr !important;
+    gap:18px !important;
+  }
+
+  .subgrid{
+    display:grid !important;
+    grid-template-columns:1fr .56fr !important;
+    gap:10px !important;
+  }
+
+  .header{
+    display:grid !important;
+    grid-template-columns:1fr 21mm !important;
+    gap:10px !important;
+    padding-bottom:6px !important;
+  }
+
+  .contact-row{
+    display:flex !important;
+    flex-wrap:wrap !important;
+    gap:4px 11px !important;
+    font-size:9.1pt !important;
+  }
+
+  .photo{
+    width:21mm !important;
+    height:24mm !important;
+  }
+
+  .target-role{
+    font-size:16.5pt !important;
+  }
+
+  /* Avoid an entire lower section being pushed to a second page */
+  .section,
+  .job,
+  .edu{
+    break-inside:auto !important;
+    page-break-inside:auto !important;
+  }
+}
+
+
+/* ---------- v10 lower 2x2 grid alignment ---------- */
+.cv-lower-grid{
+  display:grid;
+  grid-template-columns:1.08fr .92fr;
+  grid-template-areas:
+    "formation competences"
+    "engagements langues";
+  column-gap:18px;
+  row-gap:14px;
+  align-items:start;
+  margin-top:9px;
+}
+
+.cv-lower-grid > .formation{ grid-area:formation; }
+.cv-lower-grid > .competences{ grid-area:competences; }
+.cv-lower-grid > .engagements{ grid-area:engagements; }
+.cv-lower-grid > .langues{ grid-area:langues; }
+
+.cv-lower-grid > .section{
+  margin-bottom:0;
+}
+
+@media screen and (max-width:900px){
+  .cv-lower-grid{
+    grid-template-columns:1fr;
+    grid-template-areas:
+      "formation"
+      "competences"
+      "engagements"
+      "langues";
+    row-gap:16px;
+  }
+}
+
+@media print{
+  .cv-lower-grid{
+    display:grid !important;
+    grid-template-columns:1.08fr .92fr !important;
+    grid-template-areas:
+      "formation competences"
+      "engagements langues" !important;
+    column-gap:18px !important;
+    row-gap:12px !important;
+    align-items:start !important;
+  }
+}
+
+
+/* ---------- minimalist controls & link legends ---------- */
+
+.toolbar{
+  width:210mm;
+  margin:0 auto 7px;
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+  gap:6px;
+  color:var(--green);
+}
+
+.toolbar .text-control{
+  appearance:none;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  padding:0;
+  margin:0;
+  color:var(--green);
+  font-family:"Aptos Narrow", sans-serif;
+  font-size:9.5pt;
+  font-weight:400;
+  line-height:1.2;
+  text-decoration:underline;
+  text-decoration-thickness:1px;
+  text-underline-offset:3px;
+  cursor:pointer;
+}
+
+.toolbar .text-control:hover{
+  color:var(--green-dark);
+  background:transparent;
+}
+
+.toolbar .text-control.active{
+  color:var(--green-dark);
+  background:transparent;
+  font-weight:650;
+}
+
+.toolbar-separator{
+  color:#8a9692;
+  font-size:9pt;
+  user-select:none;
+}
+
+.cv-stage{
+  position:relative;
+  width:210mm;
+  margin:0 auto;
+}
+
+.screen-hint{
+  position:absolute;
+  right:calc(100% + 12px);
+  width:160px;
+  color:var(--green-dark);
+  font-family:"Aptos Narrow", sans-serif;
+  font-size:8.3pt;
+  font-weight:300;
+  line-height:1.18;
+  letter-spacing:.01em;
+  text-align:right;
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+  gap:5px;
+  opacity:.82;
+  pointer-events:none;
+}
+
+.screen-hint .hint-arrow{
+  font-size:13pt;
+  line-height:1;
+  font-weight:300;
+}
+
+.hint-contact{
+  top:24mm;
+}
+
+.hint-jacomex{
+  top:60mm;
+}
+
+.hint-inert{
+  top:107mm;
+}
+
+.hint-polytech{
+  top:162mm;
+}
+
+@media screen and (max-width:1120px){
+  .screen-hint{
+    display:none !important;
+  }
+}
+
+@media screen and (max-width:900px){
+  .toolbar{
+    width:100%;
+    justify-content:center;
+    padding:9px 12px;
+    margin:0;
+  }
+
+  .toolbar .text-control{
+    font-size:10.5pt;
+  }
+
+  .cv-stage{
+    width:100%;
+  }
+}
+
+@media print{
+  .toolbar,
+  .screen-hint{
+    display:none !important;
+  }
+
+  .cv-stage{
+    width:210mm !important;
+    margin:0 !important;
+  }
+}
+
+</style>
+</head>
+
+<body class="lang-fr">
+
+<div class="toolbar" aria-label="Options du CV">
+  <button id="btn-fr" class="active text-control" onclick="setLanguage('fr')">FR</button>
+  <span class="toolbar-separator">·</span>
+  <button id="btn-en" class="text-control" onclick="setLanguage('en')">ENG</button>
+  <span class="toolbar-separator">·</span>
+  <button class="text-control" onclick="window.print()">PDF</button>
+</div>
+
+<div class="cv-stage">
+
+  <div class="screen-hint hint-contact fr">
+    <span>Coordonnées cliquables</span>
+    <span class="hint-arrow">→</span>
+  </div>
+  <div class="screen-hint hint-contact en">
+    <span>Clickable contact details</span>
+    <span class="hint-arrow">→</span>
+  </div>
+
+  <div class="screen-hint hint-jacomex fr">
+    <span>Cliquez pour en savoir plus sur l’entreprise</span>
+    <span class="hint-arrow">→</span>
+  </div>
+  <div class="screen-hint hint-jacomex en">
+    <span>Click to learn more about the company</span>
+    <span class="hint-arrow">→</span>
+  </div>
+
+    <div class="screen-hint hint-inert fr">
+    <span>Cliquez pour en savoir plus sur l’entreprise</span>
+    <span class="hint-arrow">→</span>
+  </div>
+  <div class="screen-hint hint-inert en">
+    <span>Click to learn more about the company</span>
+    <span class="hint-arrow">→</span>
+  </div>
+
+  <div class="screen-hint hint-polytech fr">
+    <span>Cliquez pour en savoir plus sur ma formation</span>
+    <span class="hint-arrow">→</span>
+  </div>
+  <div class="screen-hint hint-polytech en">
+    <span>Click to learn more about my academic background</span>
+    <span class="hint-arrow">→</span>
+  </div>
+
+<main class="cv">
+
+<header class="header">
+  <div>
+    <h1 class="target-role">
+      <span class="fr">Ingénieure amélioration continue</span>
+      <span class="en">Continuous Improvement Engineer</span>
+    </h1>
+
+    <div class="name">Céline Bonnet-Eymard</div>
+
+    <div class="contact-row">
+      <span class="contact-item">
+        <svg class="icon" viewBox="0 0 24 24">
+          <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+          <path d="M3 7l9 6 9-6"></path>
+        </svg>
+        <a href="mailto:celine.bonneteymard@gmail.com">celine.bonneteymard@gmail.com</a>
+      </span>
+
+      <span class="contact-item">
+        <svg class="icon" viewBox="0 0 24 24">
+          <path d="M6.5 3.5l3 3-2 3c1.8 3.3 3.7 5.2 7 7l3-2 3 3c.4.4.5 1 .2 1.5-.8 1.4-2.2 2.1-3.8 1.9C10 20 4 14 3.1 7.1 2.9 5.5 3.6 4.1 5 3.3c.5-.3 1.1-.2 1.5.2z"></path>
+        </svg>
+        <a href="tel:+33782141391">+33 7 82 14 13 91</a>
+      </span>
+
+      <span class="contact-item">
+        <svg class="icon" viewBox="0 0 24 24">
+          <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+          <path d="M8 10v6M8 8h.01M12 11v5M12 13c0-2.2 4-2.4 4 .1V16"></path>
+        </svg>
+        <a href="https://www.linkedin.com/in/c%C3%A9line-bonnet-eymard-505b71255/" target="_blank">LinkedIn</a>
+      </span>
+
+      <span class="contact-item">
+        <svg class="icon" viewBox="0 0 24 24">
+          <path d="M5 16h14l-1.2-5H6.2L5 16zM7 11l1.5-4h7L17 11"></path>
+          <circle cx="8" cy="17.5" r="1.5"></circle>
+          <circle cx="16" cy="17.5" r="1.5"></circle>
+        </svg>
+        <span class="fr">Angers · Mobilité région angevine · Permis B</span>
+        <span class="en">Angers · Mobile around Angers · Driving licence</span>
+      </span>
+    </div>
+  </div>
+
+  <div class="photo">
+    <img
+      src="photo-celine.png"
+      alt="Photo Céline Bonnet-Eymard"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+    >
+    <div class="photo-placeholder" style="display:none;">
+      photo-celine.png
+    </div>
+  </div>
+</header>
+
+<p class="profile fr">
+Ingénieure en Génie Industriel avec <strong>3 ans d’expérience en alternance</strong> dans une PME manufacturière.
+J’ai mené des projets mêlant amélioration continue, méthodes, ERP et digitalisation, avec une approche centrée sur les besoins du terrain et l’accompagnement des utilisateurs.
+</p>
+
+<p class="profile en">
+Industrial Engineering graduate with <strong>3 years of apprenticeship experience</strong> in a manufacturing SME.
+I led projects combining continuous improvement, methods, ERP systems and digitalisation, with a hands-on approach focused on shop-floor needs and user support.
+</p>
+
+<section class="section">
+  <h2 class="section-title">
+    <span class="fr">Expériences professionnelles</span>
+    <span class="en">Professional experience</span>
+  </h2>
+
+  <div class="experience-stack">
+
+    <article class="job">
+      <div class="job-head">
+        <div class="brand">
+          <a class="logo" href="https://www.jacomex.com/" target="_blank">
+            <img src="logo-jacomex.png" alt="Jacomex"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+            <span class="logo-fallback" style="display:none;">J</span>
+          </a>
+          <div class="company">
+            <a href="https://www.jacomex.com/" target="_blank">Jacomex · Dagneux, FR (Ain)</a>
+          </div>
+        </div>
+        <div class="date">Oct. 2023 — Sept. 2026</div>
+      </div>
+
+      <div class="job-title job-role fr">Alternance ingénieure · Amélioration continue, méthodes & ERP</div>
+      <div class="job-title job-role en">Engineering apprenticeship · Continuous improvement, methods & ERP</div>
+
+      <ul class="fr">
+        <li>Optimisation de postes et processus de production : ergonomie, organisation, flux, gammes et instructions.</li>
+        <li>Paramétrage de l’ERP et création de tableaux de bord adaptés aux besoins métiers.</li>
+        <li>Pilotage d’un projet d’optimisation du pointage atelier : simplification du parcours utilisateur de saisie.</li>
+        <li>Recueil des besoins, conception des solutions, tests et accompagnement au changement.</li>
+        <li>Structuration de la gestion métrologique et amélioration du système documentaire qualité.</li>
+        <li>Création de gammes, supports visuels et outils numériques pour la production et les services supports.</li>
+      </ul>
+
+      <ul class="en">
+        <li>Improved production workstations and processes: ergonomics, organisation, flows, routings and work instructions.</li>
+        <li>Configured the ERP and created dashboards tailored to operational needs.</li>
+        <li>Led a project to streamline shop-floor time reporting by simplifying the user journey data-entry.</li>
+        <li>Gathered user needs, designed and tested solutions, and supported change implementation.</li>
+        <li>Structured metrology management and improved the quality document system.</li>
+        <li>Created routings, visual supports and digital tools for production and support departments.</li>
+      </ul>
+    </article>
+
+    <article class="job">
+      <div class="job-head">
+        <div class="brand">
+          <a class="logo" href="https://www.inertcorp.com/" target="_blank">
+            <img src="logo-inert.png" alt="Inert"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+            <span class="logo-fallback" style="display:none;">I</span>
+          </a>
+          <div class="company">
+            <a href="https://www.inertcorp.com/" target="_blank">Inert Corporation · Amesbury, USA (Massachusetts)</a>
+          </div>
+        </div>
+        <div class="date">
+          <span class="fr">Juin — Août 2025</span>
+          <span class="en">Jun. — Aug. 2025</span>
+        </div>
+      </div>
+
+      <div class="job-title job-role fr">Stage international · Entreprise du même groupe que Jacomex</div>
+      <div class="job-title job-role en">International internship · Part of the same group as Jacomex</div>
+
+      <ul class="fr">
+        <li>Développement de configurateurs pour le chiffrage et les contrats de maintenance.</li>
+        <li>Création d’un guide interactif d’assemblage destiné aux opérateurs.</li>
+        <li>Amélioration et structuration du système de gestion documentaire.</li>
+        <li>Création d’un assistant de dépannage destiné aux clients.</li>
+      </ul>
+
+      <ul class="en">
+        <li>Developed configurators for cost estimation and maintenance contracts.</li>
+        <li>Created an interactive assembly guide for operators.</li>
+        <li>Improved and structured the document management system.</li>
+        <li>Development of a customer-facing troubleshooting assistant.</li>
+      </ul>
+    </article>
+
+  </div>
+
+  <div class="other-experience">
+    <span class="fr"><strong>Autres expériences :</strong> restauration (2023) · accueil événementiel / intérim (2021–2023)</span>
+    <span class="en"><strong>Other experience:</strong> hospitality (2023) · event reception / temporary work (2021–2023)</span>
+  </div>
+</section>
+
+
+<div class="lower-grid cv-lower-grid">
+<section class="section formation">
+      <h2 class="section-title">
+        <span class="fr">Formation</span>
+        <span class="en">Education</span>
+      </h2>
+
+      <div class="edu">
+        <div class="edu-head">
+          <div class="brand">
+            <a class="logo"
+               href="https://polytech-angers.fr/fr/formations-polytech-angers/specialite-qualite-innovation-fiabilite.html"
+               target="_blank">
+              <img src="logo-polytech.png" alt="Polytech Angers"
+                   onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+              <span class="logo-fallback" style="display:none;">P</span>
+            </a>
+            <div class="school">
+              <a href="https://polytech-angers.fr/fr/formations-polytech-angers/specialite-qualite-innovation-fiabilite.html"
+                 target="_blank">Polytech Angers</a>
+            </div>
+          </div>
+          <div class="date">2021 — 2026</div>
+        </div>
+
+        <div class="degree fr">
+          <strong>Diplôme d’ingénieure – Génie Industriel</strong> · spécialité Qualité, Innovation, Fiabilité
+        </div>
+
+        <div class="degree en">
+          <strong>Engineering Degree – Industrial Engineering</strong> · Quality, Innovation & Reliability specialisation
+        </div>
+
+        <div class="project fr">
+          <strong>Projet de fin d’études :</strong> fiabilisation des processus industriels par l’adaptation de l’ERP Sylob.
+        </div>
+
+        <div class="project en">
+          <strong>Final-year project:</strong> improving industrial process reliability through adaptation of the Sylob ERP.
+        </div>
+
+        <div class="project fr">
+          <strong>Projet de fin de cycle préparatoire :</strong> développement d’un système d’arrosage automatique pour un jardin partagé de l’Université d’Angers (projet primé).
+        </div>
+
+        <div class="project en">
+          <strong>Preparatory-cycle final project:</strong> developed an automatic irrigation system for a community garden at the University of Angers (award-winning project).
+        </div>
+      </div>
+
+      <div class="edu">
+        <div class="edu-head">
+          <div class="school">Lycée Sainte-Marie · Lyon</div>
+          <div class="date">2021</div>
+        </div>
+
+        <div class="degree fr">
+          Baccalauréat général · Mathématiques & Physique-Chimie
+          <small>Mention Bien</small>
+        </div>
+
+        <div class="degree en">
+          French Baccalaureate · Mathematics & Physics-Chemistry
+          <small>Honours</small>
+        </div>
+      </div>
+    </section>
+
+<section class="section competences">
+        <h2 class="section-title">
+          <span class="fr">Compétences</span>
+          <span class="en">Skills</span>
+        </h2>
+
+        <div class="skill-group">
+          <span class="skill-label fr">Amélioration continue</span>
+          <span class="skill-label en">Continuous improvement</span>
+          <div class="tags">
+            <span class="tag">Lean</span>
+            <span class="tag"><span class="fr">Résolution de problèmes</span><span class="en">Problem solving</span></span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <span class="skill-label fr">Méthodes & qualité</span>
+          <span class="skill-label en">Methods & quality</span>
+          <div class="tags">
+            <span class="tag"><span class="fr">Gammes / Instructions</span><span class="en">Routings / Work instructions</span></span>
+            <span class="tag"><span class="fr">Métrologie</span><span class="en">Metrology</span></span>
+            <span class="tag"><span class="fr">SMQ</span><span class="en">QMS</span></span>
+            <span class="tag"><span class="fr">Audit interne</span><span class="en">Internal audit</span></span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <span class="skill-label">Digital & data</span>
+          <div class="tags">
+            <span class="tag">Figma</span>
+            <span class="tag">Excel (VBA)</span>
+            <span class="tag">ERP (Sylob)</span>
+            <span class="tag">SQL / Java</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <span class="skill-label fr">CAO</span>
+          <span class="skill-label en">CAD</span>
+          <div class="tags">
+            <span class="tag">Inventor</span>
+            <span class="tag">SolidWorks</span>
+          </div>
+        </div>
+      </section>
+
+<section class="section engagements">
+      <h2 class="section-title">
+        <span class="fr">Engagements & responsabilités</span>
+        <span class="en">Leadership & volunteering</span>
+      </h2>
+
+      <div class="engagement">
+        <strong>Scouts Unitaires de France · 2021–2024</strong>
+        <span class="desc fr">Cheftaine puis responsable d’unité · encadrement de groupes jusqu’à 32 jeunes. Préparation et organisation de camps · formations CEP1 & CEP2.</span>
+        <span class="desc en">Scout leader then unit leader · supervised up to 32 young people. Planned and organised camps · CEP1 & CEP2 training.</span>
+      </div>
+
+      <div class="engagement">
+        <strong>Club : Poly’tek Sound System · 2024–2025</strong>
+        <span class="desc fr">Présidente · coordination d’équipe et organisation d’événements.</span>
+        <span class="desc en">President · team coordination and event organisation.</span>
+      </div>
+
+      <div class="engagement">
+        <strong>BDE Polytech Angers · 2025</strong>
+        <span class="desc fr">Responsable logistique.</span>
+        <span class="desc en">Logistics lead.</span>
+      </div>
+
+      <div class="engagement">
+        <strong>
+          <span class="fr">Volontariat au Bénin · 2022</span>
+          <span class="en">Volunteering in Benin · 2022</span>
+        </strong>
+        <span class="desc fr">Missions d’un mois auprès des Petites Sœurs des Pauvres : accompagnement de personnes âgées en situation de grande précarité et soutien aux activités quotidiennes.</span>
+        <span class="desc en">One-month mission with les Petites Soeurs des Pauvres : supporting elderly people in situations of severe hardship and assisting with daily activities.</span>
+      </div>
+    </section>
+
+<section class="section langues">
+        <h2 class="section-title">
+          <span class="fr">Langues</span>
+          <span class="en">Languages</span>
+        </h2>
+
+        <div class="language">
+          <strong><span class="fr">Anglais</span><span class="en">English</span></strong>
+          <span>B2 · TOEIC 845/990</span>
+        </div>
+
+        <div class="language">
+          <strong><span class="fr">Espagnol</span><span class="en">Spanish</span></strong>
+          <span><span class="fr">Notions</span><span class="en">Basic</span></span>
+        </div>
+      </section>
+</div>
+
+
+</div>
+
+</main>
+</div>
+
+<script>
+function setLanguage(lang){
+  document.body.classList.remove('lang-fr','lang-en');
+  document.body.classList.add('lang-' + lang);
+
+  document.documentElement.lang = lang;
+
+  document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+
+  document.title = lang === 'fr'
+    ? 'CV – Céline Bonnet-Eymard'
+    : 'Resume – Céline Bonnet-Eymard';
+}
+</script>
+
+</body>
+</html>
